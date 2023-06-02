@@ -10,7 +10,7 @@
                             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                             <mat-hint>Enter Task</mat-hint>
                         </mat-form-field>
-                        <button [disabled]="todoForm.invalid" mat-raised-button color="primary">Add Task</button>
+                        <button [disabled]="todoForm.invalid" (click)="addTask()" mat-raised-button color="primary">Add Task</button>
                     </form>
                 </mat-card>
             </div>
@@ -24,7 +24,7 @@
                             <h2>To do</h2>
                             <div cdkDropList [cdkDropListData]="tasks" class="example-list"
                             (cdkDropListDropped)="drop($event)">
-                                <div class="example-box" *ngFor="let item of tasks" cdkDrag>{{item}}</div>
+                                <div class="example-box" *ngFor="let item of tasks" cdkDrag>{{item.description}}</div>
                             </div>
                         </div>
                     </div>
@@ -32,9 +32,9 @@
                     <!-- In Progress -->
                         <div class="example-container">
                             <h2>In Progress</h2>
-                            <div cdkDropList [cdkDropListData]="tasks" class="example-list"
+                            <div cdkDropList [cdkDropListData]="inProgress" class="example-list"
                             (cdkDropListDropped)="drop($event)">
-                                <div class="example-box" *ngFor="let item of tasks" cdkDrag>{{item}}</div>
+                                <div class="example-box" *ngFor="let item of inProgress" cdkDrag>{{item.description}}</div>
                             </div>
                         </div>
                     </div>
@@ -42,9 +42,9 @@
                     <!-- Completed -->
                         <div class="example-container">
                             <h2>Completed</h2>
-                            <div cdkDropList [cdkDropListData]="tasks" class="example-list"
+                            <div cdkDropList [cdkDropListData]="completed" class="example-list"
                             (cdkDropListDropped)="drop($event)">
-                                <div class="example-box" *ngFor="let item of tasks" cdkDrag>{{item}}</div>
+                                <div class="example-box" *ngFor="let item of completed" cdkDrag>{{item.description}}</div>
                             </div>
                         </div>
                     </div>
