@@ -21,7 +21,7 @@
                     <div class="col-md-4">
                     <!-- TODO -->
                         <div class="example-container">
-                            <h2>To do</h2>
+                            <h2>To do ({{tasks.length}})</h2>
                             <div cdkDropList [cdkDropListData]="tasks" class="example-list"
                             (cdkDropListDropped)="drop($event)">
                                 <div class="example-box" *ngFor="let item of tasks; let i = index" cdkDrag>{{item.description}}
@@ -40,7 +40,7 @@
                     <div class="col-md-4">
                     <!-- In Progress -->
                         <div class="example-container">
-                            <h2>In Progress</h2>
+                            <h2>In Progress ({{inProgress.length}})</h2>
                             <div cdkDropList [cdkDropListData]="inProgress" class="example-list"
                             (cdkDropListDropped)="drop($event)">
                                 <div class="example-box" *ngFor="let item of inProgress; let i = index;" cdkDrag>{{item.description}}
@@ -56,7 +56,7 @@
                     <div class="col-md-4">
                     <!-- Completed -->
                         <div class="example-container">
-                            <h2>Completed</h2>
+                            <h2>Completed ({{completed.length}})</h2>
                             <div cdkDropList [cdkDropListData]="completed" class="example-list"
                             (cdkDropListDropped)="drop($event)">
                                 <div class="example-box" *ngFor="let item of completed; let i = index;" cdkDrag>{{item.description}}
