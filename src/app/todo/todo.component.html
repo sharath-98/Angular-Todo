@@ -10,7 +10,7 @@
                             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                             <mat-hint>Enter Task</mat-hint>
                         </mat-form-field>
-                        <button [disabled]="todoForm.invalid" (click)="addTask()" mat-raised-button color="primary">Add Task</button>
+                        <button [disabled]="todoForm.invalid" (click)="addTask()" mat-raised-button color="primary">{{isEditEnabled?'Update':'Add Task'}}</button>
                     </form>
                 </mat-card>
             </div>
@@ -63,6 +63,9 @@
                                     <div class="box">
                                         <button mat-icon-button color="warn" (click)="deleteCompleted(i)">
                                             <mat-icon>delete</mat-icon>
+                                        </button>
+                                        <button mat-icon-button color="primary">
+                                            <mat-icon>check_circle</mat-icon>
                                         </button>
                                     </div>
                                 </div>
